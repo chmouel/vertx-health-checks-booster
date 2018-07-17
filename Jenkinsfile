@@ -1,7 +1,8 @@
-node("launchpad-maven") {
-  checkout scm
-  stage("Build") {
-    sh "mvn fabric8:deploy -Popenshift"
-  }
-  stage("Deploy")
+#!/usr/bin/groovy
+
+@Library('github.com/chmouel/osio-pipeline-helpers@master')
+def arg = null
+
+osio {
+	def label = 'maven'
 }
